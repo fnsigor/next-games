@@ -32,8 +32,8 @@ export const Navbar = () => {
                 <input
                     onChange={e => setGamename(e.target.value)}
                     value={gamename}
-                    className={`text-base bg-trasparent-gray border border-white rounded-lg px-4 w-[300px]
-                focus:outline focus:outline-white focus:bg-gray focus:text-white
+                    className={`text-base bg-trasparent-gray border border-white rounded-lg px-4 w-[300px] text-white
+                focus:outline focus:outline-white focus:bg-gray
                 transition duration-75
                 `}
                     type="text" placeholder='Call Of Duty Warzone' />

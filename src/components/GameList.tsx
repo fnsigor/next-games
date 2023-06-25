@@ -1,17 +1,17 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import GameCard from './GameCard'
 import { IGame } from "@/interfaces/igame";
 import Button from './Button';
 
+import { useSearchParams } from 'next/navigation'
+
 interface Props {
   list: IGame[]
   query?: string
 }
-
-
 
 
 export const GameList = ({ list, query }: Props) => {
@@ -25,6 +25,16 @@ export const GameList = ({ list, query }: Props) => {
     return acc;
   }, [])
 
+  
+  const searchParams = useSearchParams()
+  const search = searchParams.get('filter')
+
+  useEffect(()=>{
+   if(search){
+    setGenreFilter(search)
+   }
+  }, [search])
+
 
 
 
@@ -32,17 +42,18 @@ export const GameList = ({ list, query }: Props) => {
     <>
 
       {query !== undefined
-        ? (<h1 className="font-bold text-white text-4xl text-center mb-20">CRsultado para busca {query}</h1>)
+        ? (<h1 className="font-bold text-white text-4xl text-center mb-20">Exibindo resultados para
+         <span className='italic'> {query}</span></h1>)
         : (genreFilter === 'all'
           ? (<h1 className="font-bold text-white text-4xl text-center mb-20">Todos os jogos</h1>)
-          : (<h1 className="font-bold text-white text-4xl text-center mb-20">Categoria de {genreFilter}</h1>)
+          : (<h1 className="font-bold text-white text-4xl text-center mb-20">Categoria: {genreFilter}</h1>)
         )
       }
 
 
       {query === undefined &&
         <select
-          defaultValue={'all'}
+          value={genreFilter}
           className={`absolute top-0 right-0
       text-white border boder-white border-solid py-2 px-4 rounded-lg flex gap-2 justify-center text-base bg-black
     hover:bg-white hover:text-black
@@ -68,16 +79,16 @@ export const GameList = ({ list, query }: Props) => {
 
               ? (list.filter(game => game.genre === genreFilter)
                 .map(game => (
-                  <GameCard game={game} />
+                  <GameCard game={game} key={game.id}/>
                 )))
 
               : (list.map(game => (
-                <GameCard game={game} />
+                <GameCard game={game}key={game.id} />
               ))))
 
             : (list.filter(game => game.title.toLowerCase().includes(query.toLowerCase()))
               .map(game => (
-                <GameCard game={game} />
+                <GameCard game={game} key={game.id} />
               )))
         }
 

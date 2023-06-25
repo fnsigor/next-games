@@ -1,0 +1,48 @@
+.SelectTrigger {
+    
+    border: 1px solid white;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    outline: none;
+
+    position: absolute;
+}
+
+.SelectItem {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    color:white;
+    border-radius: 5px;
+    position: relative;
+    user-select: none;
+    padding: .5rem;
+    outline: none;
+
+    /* @include useFlex;
+    justify-content: space-between; */
+  }
+
+  .SelectItem[data-highlighted]{
+    background-color: purple;
+    cursor: pointer;
+  }
+
+  .SelectContent {
+    overflow: hidden;
+    background-color: blue;
+    border-radius: 5px; 
+    position: relative;
+  }
+
+  .SelectViewport{
+      padding: 1rem;
+  }
+
+  .SelectViewport .SelectItem:not(.SelectViewport .SelectItem:last-child){
+    margin-bottom: 5px;
+  }

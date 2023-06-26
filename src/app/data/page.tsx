@@ -1,7 +1,7 @@
 import { GameList } from '@/components/GameList'
 import { IGame } from '@/interfaces/igame';
 import React from 'react'
-const url = "https://games-test-api-81e9fb0d564a.herokuapp.com/api/data/";
+const url = "https://games-test-api-81e9fb0d564a.herokuapp.com/api/data";
 const config = {
     headers: {
         "dev-email-address": "igorcontasec@gmail.com"

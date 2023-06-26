@@ -18,7 +18,7 @@ const ListTitle = ({ children }: any) => {
   return (
     <h1 className={`
     font-bold text-white text-4xl text-center mb-20
-    lg:text-xl 
+    lg:text-xl lg:mb-12
     `}>{children}</h1>
   )
 }
@@ -67,7 +67,7 @@ export const GameList = ({ list, query }: Props) => {
       text-white border boder-white border-solid py-2 px-4 rounded-lg flex gap-2 justify-center text-base bg-black
     hover:bg-white hover:text-black
     transition duration-300
-     lg:hidden
+     lg:fixed lg:top-[initial] lg:bottom-[80px] lg:right-6 lg:text-sm
       `}
           onChange={e => setGenreFilter(e.currentTarget.value)}>
           <option value="all">Todos os jogos</option>
@@ -77,13 +77,14 @@ export const GameList = ({ list, query }: Props) => {
         </select>
       }
 
-      {query === undefined &&
+      {/* {query === undefined &&
         <select
           value={genreFilter}
-          className={`fixed block bottom-[80px] right-6
+          className={`none bottom-[80px] right-6
       text-white border boder-white border-solid py-2 px-4 rounded-lg flex gap-2 justify-center text-sm bg-black
   hover:bg-white hover:text-black
   transition duration-300
+  lg:block
       `}
           onChange={e => setGenreFilter(e.currentTarget.value)}>
           <option value="all">Todos os jogos</option>
@@ -92,7 +93,7 @@ export const GameList = ({ list, query }: Props) => {
           ))}
         </select>
 
-      }
+      } */}
 
       <ul
         className={`

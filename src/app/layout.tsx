@@ -2,6 +2,7 @@ import Head from 'next/head'
 import './globals.css'
 import { Open_Sans } from '@next/font/google'
 import { Navbar } from '@/components/Navbar'
+import { MobileMenu } from '@/components/MobileMenu'
 
 
 const openSans = Open_Sans({
@@ -23,9 +24,10 @@ export default function RootLayout({
     <html lang="pt-br"> 
       <body className={`${openSans.className} bg-black min-h-[100vh]`}>
         <Navbar />
-        <main className={`${openSans.className} px-4`}>
+        <main className={`${openSans.className} px-6`}>
           {children}
         </main>
+        <MobileMenu/>
       </body>
     </html>
 

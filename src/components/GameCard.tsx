@@ -13,9 +13,9 @@ const GameCard = ({game}: Props) => {
     <li>
         <Image src={game.thumbnail} alt={game.title} width={365} height={206} className='rounded-[8px]  object-contain'/>
         <h4 className={`
-        text-white b font-bold
+        text-white b font-bold lg:text-sm
         `}>{game.title}</h4>
-        <Link href={`/data?filter=${game.genre}`} className='text-yellow-300'>{game.genre}</Link>
+        <Link href={`/data?filter=${game.genre}`} className='text-yellow-300 lg:text-sm'>{game.genre}</Link>
     </li>
   )
 }

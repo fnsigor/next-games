@@ -21,9 +21,6 @@ export const Navbar = () => {
                     <Link href={"/"}>Home</Link>
                 </Button>
                 <Button>
-                    <Link href={"/data"}>Jogos</Link>
-                </Button>
-                <Button>
                     <Link href={"https://github.com/fnsigor?tab=repositories"} target='_blank'>Acessar repositório</Link>
                 </Button>
             </div>
@@ -39,7 +36,7 @@ export const Navbar = () => {
                 `}
                     type="text" placeholder='Call Of Duty Warzone' />
                 <Button className='lg:text-sm'>
-                    <Link href={`/data/${gamename}`}>Buscar</Link>
+                    <Link href={`/${gamename}`}>Buscar</Link>
                 </Button>
             </div>
         </nav>

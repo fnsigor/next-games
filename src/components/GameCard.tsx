@@ -15,7 +15,7 @@ const GameCard = ({game}: Props) => {
         <h4 className={`
         text-white b font-bold lg:text-sm
         `}>{game.title}</h4>
-        <Link href={`/data?filter=${game.genre}`} className='text-yellow-300 lg:text-sm'>{game.genre}</Link>
+        <Link href={`/?filter=${game.genre}`} className='text-yellow-300 lg:text-sm'>{game.genre}</Link>
     </li>
   )
 }
